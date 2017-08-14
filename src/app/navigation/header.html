@@ -1,0 +1,17 @@
+<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" flex>
+    <div class="p-5 mt-5" layout="row" flex>
+        <div class="ml-16" flex="60">
+            <i ng-click="toggleLeft()" style="top:-1px !important;" class="fa fa-bars fa-lg light"></i>
+            <span ui-sref="app.home" class="md-title ml-20 black-fg">MADS</span>
+        </div>
+        <div flex="40" layout="row" class="mt-5" layout-align="space around">
+            <i class="fa grey-400-fg fa-search fa-lg light" ng-click="vm.showSearch = !vm.showSearch"></i>
+            <i ui-sref="app.wishlist" class="fa pink-A100-fg fa-heart fa-lg"></i>
+            <i ui-sref="app.cart" class="fa grey-700-fg fa-shopping-bag fa-lg "></i>
+        </div>
+    </div>
+</md-nav-bar>
+
+<div id="search-box" ng-if="vm.showSearch">
+    <input class="bb p-5 search-bar" md-whiteframe="2" aria-label="search" placeholder="Plain T-shirt, Adventurer, Sippers, Street style" />
+</div>

@@ -1,0 +1,28 @@
+<div layout="column" layout-align="center center" flex>
+    <div layout="column" class="md-padding">
+        <div layout="row" layout-align="center center">
+            <div layout="row" layout-align="center center" ng-repeat="link in data.linkline1">
+                <span ui-sref="{{link.dest}}" class="md-body-2">{{link.name}}</span>
+                <div ng-if="!$last" class="headerDivider"></div>
+            </div>
+        </div>
+        <div layout="row" layout-align="center center">
+            <div layout="row" layout-align="center center" ng-repeat="link in data.linkline2">
+                <span ui-sref="{{link.dest}}" class="md-body-2">{{link.name}}</span>
+                <div ng-if="!$last" class="headerDivider"></div>
+            </div>
+        </div>
+    </div>
+    <div layout="column">
+        <div layout="row" layout-align="center center" class="md-padding">
+            <i class="fa fa-lock grey-700-fg pb-5"></i>
+            <span class="md-caption ml-5">100% secure payment</span>
+        </div>
+        <div layout="row">
+            <span class="p-10" ng-repeat="paymentIcon in data.paymentIcons"><img ng-src={{paymentIcon}}></span>
+        </div>
+    </div>
+    <div layout="row">
+
+    </div>
+</div>

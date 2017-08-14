@@ -1,0 +1,30 @@
+<md-sidenav class=" pv-8 md-sidenav-left" md-component-id="left" md-whiteframe="4">
+
+    <md-content class="bb md-padding">
+        <div layout="row" class="mt-10" layout-align="start center">
+            <i ng-click="toggleLeft()" class="fa grey-700-fg fa-chevron-left fa-lg extra-light"></i>
+            <span ui-sref="app.home" class="ml-20 md-title black-fg">MADS</span>
+        </div>
+    </md-content>
+
+    <md-content>
+        <div ng-repeat="category in data.categories">
+            <div ng-click="category.showSubCategory = !category.showSubCategory" layout="row" class="pv-16 bb-light">
+                <span class="ml-16 md-body-2 grey-700-fg">{{category.name}}</span>
+                <div ng-if="category.subCategories" layout="row" layout-align="end center" flex>
+                    <i ng-if="!category.showSubCategory" class=" mr-16 fa grey-700-fg fa-chevron-down extra-light"></i>
+                    <i ng-if="category.showSubCategory" class=" mr-16 fa grey-700-fg fa-chevron-up extra-light"></i>
+                </div>
+            </div>
+            <div ng-if="category.subCategories && category.showSubCategory">
+                <div class=" bb-extra-light pv-16" ui-sref={{subCategory.query}} ng-repeat="subCategory in category.subCategories track by $index">
+                    <span class="ml-32 md-body-2 grey-700-fg">{{subCategory.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="pv-16" ui-sref={{link.dest}} ng-repeat="link in data.links">
+            <span class="ml-16 md-body-2 grey-700-fg">{{link.name}}</span>
+        </div>
+    </md-content>
+
+</md-sidenav>

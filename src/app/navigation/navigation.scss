@@ -1,0 +1,19 @@
+#header {
+    height: auto;
+    z-index: 10;
+}
+
+.search-bar {
+    width: 100%;
+    height: 35px;
+    position: fixed;
+}
+
+.headerDivider {
+    border-left: 1px solid #38546d;
+    border-right: 1px solid #16222c;
+    height: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}

@@ -1,0 +1,15 @@
+i {
+    position: relative;
+    top: 1px;
+}
+
+input,
+div,
+i:focus {
+    outline: none;
+    border: none;
+}
+
+.md-nav-bar {
+    border: none;
+}

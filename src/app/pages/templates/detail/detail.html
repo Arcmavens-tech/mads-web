@@ -1,0 +1,73 @@
+<div class="shop-banner-details shop-banner-back">
+    <div class="effect-over-dresses"></div>
+    <div class="container">
+        <div class="col-lg-12">
+            <!--<div class="about-content-icon"><span class="icon-browser"></span></div>-->
+            <h1 class="product-topsub-title">Active Gymwear - Flat Rs.499</h1>
+            <h1 class="product-top-title">Product<span class="color-txt"> Details</span></h1>
+        </div>
+    </div>
+</div>
+<div class="breadcrumb-color meet-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <a ui-sref="app.home">Home</a>
+                    </li>
+                    <li class="active">Product details</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="product_dresses" class="container shop-dresses">
+    <div class="row">
+        <div id="single-prod-top" class="prod-top-img col-md-12">
+            <div class="col-md-4 pp-cont-det">
+                <div class="details-single-img dresses-single-b">
+                    <img ng-src="assets/images/{{product.src}}" alt="{{product.name}}" />
+                </div>
+                <span class="onsale" ng-show='product.discount != null'>
+                <span>{{product.discount}}</span>
+                </span>
+            </div>
+            <div class="col-md-8 det-info-prod">
+                <div class="single-prod-info">
+                    <div class="det-dres">
+                        <span class="product-name-title">{{product.name}}</span>
+                        <a class="subtitle" href="">( {{product.category}} ) </a>
+                    </div>
+                    <span class="shop-price"> {{product.price | currency : "Rs."}} </span>
+                </div>
+                <div class="single-prod-description">
+                    {{product.description}}
+                </div>
+                <div class="details-material_dresses">
+                    <ul>
+                        <li class="size-prod">
+                            <p>Select Size</p>
+                            <md-radio-group class="radio-size" ng-model="selectedSize">
+                                <md-radio-button class="pr-10" ng-repeat="size in product.details.sizes" type="radio" name="Color1" value="{{size}}" aria-label="Color">{{size}}</md-radio-button>
+                            </md-radio-group>
+                        </li>
+                        <li class="color-prod">
+                            <p>Select Color</p>
+                            <md-radio-group class="radio-color" ng-model="selectedColor">
+                                <md-radio-button class="pr-10" ng-repeat="color in product.details.colors" type="radio" name="Color1" value="{{color}}" aria-label="Color">{{color}}</md-radio-button>
+                            </md-radio-group>
+                        </li>
+                    </ul>
+                </div>
+                <div class="single-prod-button">
+                    <button class="btn btn-lg btn-primary" ng-click="vm.addToCart()">
+                    <i class="icon-shopping-cart icon-white" /> Add to cart
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

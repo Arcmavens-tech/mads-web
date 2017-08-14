@@ -1,0 +1,56 @@
+<md-dialog id="dialogLogin" layout="column" aria-label="Notify">
+    <md-dialog-content flex-order="1" flex layout="column" layout-align="space around">
+        <md-tabs flex md-border-bottom>
+            <span>Hello</span>
+            <md-tab layout="column" label="Login">
+                <form name="loginForm" ng-submit="vm.authenticate()" class="overeflow-y">
+                    <md-input-container class="md-block">
+                        <label class="main-text">Email ID</label>
+                        <input class="main-text" required type="email" step="any" name="email" ng-model="vm.user.email" />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label class="main-text">Leapwired Password</label>
+                        <input class="main-text" required type="password" step="any" name="password" ng-model="vm.user.password" />
+                    </md-input-container>
+                    <div>
+                        <md-button type="submit" class="white-fg md-accent-bg">Submit</md-button>
+                    </div>
+                </form>
+            </md-tab>
+            <md-tab layout="column" label="SignUp">
+
+                <form name="signupForm" ng-submit="vm.register()" class="overeflow-y">
+                    <md-input-container class="md-block">
+                        <label class="main-text">Email ID</label>
+                        <input class="main-text" required type="email" step="any" name="email" ng-model="vm.user.email" />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label class="main-text">Leapwired Password</label>
+                        <input class="main-text" required type="password" step="any" name="password" ng-model="vm.user.password" />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label class="main-text">Name</label>
+                        <input class="main-text" required type="text" step="any" name="email" ng-model="vm.profile.name" />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label class="main-text">Enter 10 digit mobile no.</label>
+                        <input class="main-text" maxlength="10" ng-pattern="/^[0-9]{10}$/" required step="any" name="id" ng-model="vm.profile.phone" />
+                    </md-input-container>
+                    <md-button ng-click="vm.sendOtp()" class="white-fg md-green-bg">Get OTP</md-button>
+                    <md-input-container class="md-block">
+                        <label class="main-text">Enter OTP</label>
+                        <div layout="row">
+                            <input flex-order="1" flex class="main-text" maxlength="4" required step="any" name="otp" ng-model="vm.otp" ng-pattern="/^[0-9]{4}$/" />
+                            <i flex-order="2" ng-show="vm.showCorrectOtp" class="icon icon-check-circle green-fg"></i>
+                        </div>
+                    </md-input-container>
+
+                    <div>
+                        <md-button type="submit" class="white-fg md-accent-bg">Submit</md-button>
+                    </div>
+                </form>
+            </md-tab>
+        </md-tabs>
+    </md-dialog-content>
+
+</md-dialog>
