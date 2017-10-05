@@ -1,16 +1,16 @@
 <div class="jk-carousel">
 
     <div class="slides-container" layout="row" md-swipe-left="ctrl.navigateRight()" md-swipe-right="ctrl.navigateLeft()">
-        <div ng-repeat="slideItem in ctrl.cloneData" class="slide">
+        <div ng-repeat="slideItem in ctrl.cloneData track by $index" class="slide">
             <div ng-include="ctrl.itemTemplateUrl"></div>
         </div>
     </div>
 
-    <md-button class="md-icon-button left-arrow-button" ng-click="ctrl.navigateLeft()">
+    <md-button class="md-icon-button left-arrow-button" ng-click="ctrl.navigateLeft()" aria-label="left-navigate">
         <i class="fa grey-700-fg fa-chevron-left fa-lg "></i>
     </md-button>
 
-    <md-button class="md-icon-button right-arrow-button" ng-click="ctrl.navigateRight()">
+    <md-button class="md-icon-button right-arrow-button" ng-click="ctrl.navigateRight()" aria-label="right-navigate">
         <i class="fa grey-700-fg fa-chevron-right fa-lg "></i>
     </md-button>
 

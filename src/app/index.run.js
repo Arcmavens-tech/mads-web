@@ -9,14 +9,13 @@
     function runBlock($rootScope, AppTheme, AppData) {
 
         var config = {
-            apiKey: "AIzaSyA8N1iziFesSzn_BdPgo0doeyiA74TnHIs",
-            authDomain: "madsapp-f344e.firebaseapp.com",
-            databaseURL: "https://madsapp-f344e.firebaseio.com",
-            projectId: "madsapp-f344e",
-            storageBucket: "madsapp-f344e.appspot.com",
-            messagingSenderId: "359812391398"
+            apiKey: "AIzaSyA2flrp_Kv5xsfC_pxbWJovXKnoafJ3m0s",
+            authDomain: "mads-store.firebaseapp.com",
+            databaseURL: "https://mads-store.firebaseio.com",
+            projectId: "mads-store",
+            storageBucket: "mads-store.appspot.com",
+            messagingSenderId: "975051914897"
         };
-
         firebase.initializeApp(config);
 
         $rootScope.theme = AppTheme;

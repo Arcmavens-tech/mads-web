@@ -6,8 +6,9 @@
     'use strict';
 
     var AppTheme = {
-        "primary": "cyan-900",
-        "icon_dark": "grey-800"
+        "primary": "cyan",
+        "icon_dark": "grey-800",
+        "icon_light": "grey-600"
     };
 
     angular

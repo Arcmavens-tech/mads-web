@@ -6,26 +6,14 @@
         .controller('ProductDetailController', ProductDetailController);
 
     /** @ngInject */
-    function ProductDetailController($state, $scope, $stateParams, product, $sessionStorage, Cart) {
+    function ProductDetailController($state, $scope, $stateParams) {
         var vm = this;
 
-        vm.addToCart = addToCart;
+        $scope.product = { allPictures: ['1.jpg', '1r.jpg'] };
 
         activate();
 
-        function activate() {
-            $scope.product = product;
-            vm.cart = Cart.getCurrentCart();
-            $scope.selectedColor = product.details.colors[0];
-            $scope.selectedSize = product.details.sizes[0];
-        }
-
-
-        function addToCart() {
-            $scope.product.color = $scope.selectedColor;
-            $scope.product.size = $scope.selectedSize;
-            Cart.addItem($scope.product);
-        }
+        function activate() {}
 
     }
 })();

@@ -1,0 +1,23 @@
+<md-dialog id="dialogFilters" layout="column" aria-label="Filters">
+    <md-dialog-content flex layout="column">
+        <div layout="row" layout-align="start center" class="grey-100-bg p-20">
+            <span class="md-title" flex>Filters</span>
+            <i class="fa fa-close fa-lg light"></i>
+        </div>
+        <div ng-repeat="category in data.categories">
+            <div ng-click="category.showSubCategory = !category.showSubCategory" layout="row" class="pv-16 bb-light">
+                <span class="ml-16 md-body-2 grey-700-fg">{{category.name}}</span>
+                <div ng-if="category.subCategories" layout="row" layout-align="end center" flex>
+                    <i ng-if="!category.showSubCategory" class=" mr-16 fa grey-700-fg fa-chevron-down extra-light"></i>
+                    <i ng-if="category.showSubCategory" class=" mr-16 fa grey-700-fg fa-chevron-up extra-light"></i>
+                </div>
+            </div>
+            <div ng-if="category.subCategories && category.showSubCategory">
+                <div class=" bb-extra-light pv-16" ui-sref={{subCategory.query}} ng-repeat="subCategory in category.subCategories track by $index">
+                    <span class="ml-32 md-body-2 grey-700-fg">{{subCategory.name}}</span>
+                </div>
+            </div>
+        </div>
+    </md-dialog-content>
+
+</md-dialog>

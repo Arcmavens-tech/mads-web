@@ -1,0 +1,28 @@
+<div class="sub-header md-padding bb" layout="row">
+    <div flex="50" layout="row" layout-align="center center" ng-click="applyFilters()">
+        <i class="fa fa-filter {{theme.icon_light}}-fg"></i>
+        <span class="ml-10 md-body-2">FILTERS</span>
+    </div>
+    <div flex="50" layout="row" layout-align="center center" ng-click="applySort()">
+        <i class="fa fa-sort {{theme.icon_light}}-fg"></i>
+        <span class=" ml-10 md-body-2">SORT</span>
+        <span class="dot {{theme.primary}}-700-bg"></span>
+    </div>
+</div>
+<div layout="row" class="md-padding">
+    <div class="md-padding" flex="50" ui-sref="app.detail({productId: product.id})" ng-repeat="product in products">
+        <div>
+            <img ng-src="{{product.image}}">
+        </div>
+        <div>
+            <div>
+                <span class="md-caption">{{product.title}}</span>
+            </div>
+            <div layout="row" class="" layout-align="center center" flex>
+                <i class="fa fa-inr mr-5"></i>
+                <span class="md-body-2" flex>{{product.price}}</span>
+                <i class="fa ml-5" ng-click="addToWishlist(product)" ng-class="{'fa-heart-o': !product.inWishlist, '{{theme.primary}}-700-fg fa-heart': product.inWishlist}"></i>
+            </div>
+        </div>
+    </div>
+</div>

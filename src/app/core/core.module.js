@@ -12,6 +12,7 @@
             'firebase',
             'ngStorage',
             'ngMaterial',
-            'jkAngularCarousel'
+            'jkAngularCarousel',
+            'core.filters'
         ]);
 })();

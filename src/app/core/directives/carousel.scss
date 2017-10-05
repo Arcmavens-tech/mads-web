@@ -41,25 +41,26 @@
     .radio-buttons-container {
         position: absolute;
         bottom: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-bottom: 10px;
         width: 100%;
         md-radio-button {
-            margin-right: -5px;
+            margin-right: 5px;
             outline: none;
+            height: 15px;
+            width: 15px;
             .md-off {
-                border-color: #ffffff;
-                height: 10px;
-                width: 10px;
+                border: none;
+                background-color: #eeeeee;
+                height: 8px;
+                width: 8px;
             }
             .md-on {
-                height: 10px;
-                width: 10px;
-            }
-            .md-container {
-                height: 15px;
-                width: 15px;
+                border: none;
+                margin: -6px;
+                background-color: #ffca28;
+                height: 20px;
+                width: 20px;
             }
         }
     }

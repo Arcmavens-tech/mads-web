@@ -82,21 +82,21 @@
                 views: {
                     'content@app': {
                         templateUrl: 'app/pages/templates/detail/detail.html',
-                        controller: 'DetailController as vm'
-                    }
-                },
-                resolve: {
-                    product: function getProduct($stateParams, Products, $q) {
-                        var productId = $stateParams.productId;
-                        var deferred = $q.defer();
-                        Products.getProduct(productId).$loaded().then(function success(response) {
-                            deferred.resolve(response);
-                        }, function error(error) {
-                            deferred.reject(error);
-                        });
-                        return deferred.promise;
+                        controller: 'ProductDetailController as vm'
                     }
                 }
+                // resolve: {
+                //     product: function getProduct($stateParams, Products, $q) {
+                //         var productId = $stateParams.productId;
+                //         var deferred = $q.defer();
+                //         Products.getProduct(productId).$loaded().then(function success(response) {
+                //             deferred.resolve(response);
+                //         }, function error(error) {
+                //             deferred.reject(error);
+                //         });
+                //         return deferred.promise;
+                //     }
+                // }
             })
             .state('app.links', {
                 url: '/links/:link',

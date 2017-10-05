@@ -3,20 +3,20 @@
 
     angular
         .module('app.services')
-        .factory('Cart', CartFactory);
+        .factory('Toast', ToastFactory);
 
-    function CartFactory($mdToast) {
+    function ToastFactory($mdToast) {
         var factory = {};
 
-        factory.showErrorToast = showErrorToast;
+        factory.showMessageToast = showMessageToast;
 
         return factory;
 
-        function showErrorToast() {
+        function showMessageToast(message) {
             $mdToast.show({
                 template: '<md-toast id="language-message" layout="column"><div class="md-toast-content">' + message + '</div></md-toast>',
-                hideDelay: 5000,
-                position: 'top right',
+                hideDelay: 2500,
+                position: 'bottom center',
                 parent: '#dialog'
             });
         }
